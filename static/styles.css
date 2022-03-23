@@ -1,0 +1,26 @@
+body{
+    margin:0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('Pink_Panther.png');
+    background-repeat: no-repeat;
+    background-position-y: 10rem;
+}
+
+.content{
+    text-align: center;
+    align-content: center;
+    
+}
+table, td, th {
+    border: 1px solid #aaa;
+}
+table{
+    margin-left: auto; 
+    margin-right: auto;
+    width:50%;
+    align-self: center;
+    
+}
+.table_header{
+    background-color:rgb(243, 187, 211) ;
+}

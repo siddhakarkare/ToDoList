@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<Title>To Do...</Title>
+{% endblock head%}
+
+{% block body %}
+<div class="content">
+    <h1>To Do</h1>
+    <h4>To Do</h4>
+    <h5>To Do... To Do... To Do</h5>
+    <h6>To Do... To Do...</h6>
+    {% if tasks|length <= 0 %}
+    <div>
+        <h3> There are not tasks to display. Create your first task!</h3>
+    </div>
+    {% else %}
+    <table>
+        <tr class="table_header">
+            <th >Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{task.content}} </td>
+            <td>{{task.date_created.date()}} </td>
+            <td>
+                <a href="/delete/{{task.id}}"><img src="/static/trash-outline.svg" style="width:1rem;height:1rem;"/></a>
+                <a href="/update/{{task.id}}"><img src="/static/create-outline.svg" style="width:1rem;height:1rem;"/></a>
+                <br/>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {%endif%}
+    <br/>
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content"/> <br/> <br/>
+        <input type="submit" value="Add Me" class="btn btn-dark"/>
+    </form>
+</div>
+{% endblock body%}
